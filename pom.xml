@@ -23,8 +23,8 @@
       </plugin>
     </plugins>
   </build>
-  
-   <dependencies>
+
+ <dependencies>
 
 		<dependency>
 			<groupId>com.jtattoo</groupId>
@@ -83,4 +83,6 @@
 		</dependency>
 		
 </dependencies>
+	  
+
 </project>
