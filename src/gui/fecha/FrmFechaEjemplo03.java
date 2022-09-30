@@ -91,10 +91,10 @@ public class FrmFechaEjemplo03 extends JFrame implements ActionListener {
 				mensaje("La fecha de Inicio tiene formato yyyy-MM-dd");
 			}else if (!fecFin.matches(Validaciones.FECHA)) {
 				mensaje("La fecha de Fin tiene formato yyyy-MM-dd");
-			}else if (!FechaUtil.isSuperiorFechaYYYYMMdd(fecIni, fecFin)) {
+			}else if (FechaUtil.isNotSuperiorFechaYYYYMMdd(fecIni, fecFin)) {
 				mensaje("La fecha de Fin es superior a la fecha Inicio");
-			}else if (!FechaUtil.isSuperiorSeisMesesFechaYYYYMMdd(fecIni, fecFin)) {
-				mensaje("La fecha fin no debe ser superior a seis meses");
+			}else if (FechaUtil.isNotSuperiorSeisMesesFechaYYYYMMdd(fecIni, fecFin)) {
+				mensaje("La fecha fin no debe ser superior a la fecha de Inicio en seis meses");
 			}
 	}
 	

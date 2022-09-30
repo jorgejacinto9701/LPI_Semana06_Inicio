@@ -44,19 +44,19 @@ public class FechaUtil {
 		return sdf.format(fecha);
 	}
 	
-	public static boolean isSuperiorFechaYYYYMMdd(String fecUno, String fecDos) {
+	public static boolean isNotSuperiorFechaYYYYMMdd(String fecUno, String fecDos) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			Date dateUno = sdf.parse(fecUno);
 			Date dateDos = sdf.parse(fecDos);
-			return dateDos.after(dateUno);
+			return dateDos.before(dateUno);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
 	
-	public static boolean isSuperiorSeisMesesFechaYYYYMMdd(String fecUno, String fecDos) {
+	public static boolean isNotSuperiorSeisMesesFechaYYYYMMdd(String fecUno, String fecDos) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			Date dateUno = sdf.parse(fecUno);
@@ -70,7 +70,7 @@ public class FechaUtil {
 			Date  dateAumentado = calendar.getTime();
 			
 			System.out.println(sdf.format(dateAumentado));
-			return dateAumentado.after(dateDos);
+			return dateAumentado.before(dateDos);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
