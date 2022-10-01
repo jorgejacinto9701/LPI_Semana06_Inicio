@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,6 +20,10 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+
+import entidad.Docente;
+import model.DocenteModel;
+import util.Validaciones;
 
 public class FrmConsultaDocentePorFecha extends JFrame implements ActionListener {
 
@@ -115,13 +121,39 @@ public class FrmConsultaDocentePorFecha extends JFrame implements ActionListener
 		}
 	}
 	protected void do_btnFiltrar_actionPerformed(ActionEvent arg0) {
+		String fecIni  = txtInicio.getText().trim();
+		String fecFin  = txtFin.getText().trim();
 		
+		if (!fecIni.matches(Validaciones.FECHA)) {
+			mensaje("La fecha inicio tiene formato yyyy-MM-dd");
+		}else if (!fecFin.matches(Validaciones.FECHA)) {
+			mensaje("La fecha fin tiene formato yyyy-MM-dd");
+		}else {
+			Date dtFecIni = Date.valueOf(fecIni);
+			Date dtFecFin = Date.valueOf(fecFin);
+			
+			DocenteModel model = new DocenteModel();
+			List<Docente> lista = model.listaDocentePorFecha(dtFecIni, dtFecFin);
+			
+			DefaultTableModel dtm = (DefaultTableModel) table.getModel();
+			dtm.setRowCount(0);
+			
+			for (Docente x : lista) {
+				Object[] fila = {x.getIdDocente(), x.getNombre(), x.getDni(), x.getFechaNacimiento()};
+				dtm.addRow(fila);
+			}
+			
+		}
 	}
 	
 	public void mensaje(String ms){
 		JOptionPane.showMessageDialog(this, ms);
 	}
 }
+
+
+
+
 
 
 
