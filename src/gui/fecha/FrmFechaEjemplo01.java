@@ -12,8 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import util.FechaUtil;
-
 public class FrmFechaEjemplo01 extends JFrame implements ActionListener {
 
 	/**
@@ -77,8 +75,7 @@ public class FrmFechaEjemplo01 extends JFrame implements ActionListener {
 		btnFiltrar.setBounds(564, 52, 89, 23);
 		contentPane.add(btnFiltrar);
 		
-		txtFechaInicio.setText(FechaUtil.getFechaPrimeroEneroYYYYMMdd());
-		txtFechaFin.setText(FechaUtil.getFechaActualYYYYMMdd());
+
 		
 	}
 	public void actionPerformed(ActionEvent e) {
