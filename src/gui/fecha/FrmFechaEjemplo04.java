@@ -15,8 +15,10 @@ import javax.swing.border.EmptyBorder;
 public class FrmFechaEjemplo04 extends JFrame implements ActionListener {
 
 	/**
+	 * Caso 4
+	 * Validar que el rango de fecha no se mayor a un año (360 días)
 	 * 
-	 */
+	 */ 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtFechaInicio;
