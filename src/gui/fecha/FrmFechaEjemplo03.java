@@ -12,9 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import util.FechaUtil;
-import util.Validaciones;
-
 public class FrmFechaEjemplo03 extends JFrame implements ActionListener {
 
 	/**
@@ -84,18 +81,7 @@ public class FrmFechaEjemplo03 extends JFrame implements ActionListener {
 		}
 	}
 	protected void actionPerformedBtnFiltrarJButton(ActionEvent e) {
-			String fecIni = txtFechaInicio.getText().trim();
-			String fecFin = txtFechaFin.getText().trim();
-		
-			if (!fecIni.matches(Validaciones.FECHA)) {
-				mensaje("La fecha de Inicio tiene formato yyyy-MM-dd");
-			}else if (!fecFin.matches(Validaciones.FECHA)) {
-				mensaje("La fecha de Fin tiene formato yyyy-MM-dd");
-			}else if (FechaUtil.isNotSuperiorFechaYYYYMMdd(fecIni, fecFin)) {
-				mensaje("La fecha de Fin es superior a la fecha Inicio");
-			}else if (FechaUtil.isNotSuperiorSeisMesesFechaYYYYMMdd(fecIni, fecFin)) {
-				mensaje("La fecha fin no debe ser superior a la fecha de Inicio en seis meses");
-			}
+			
 	}
 	
 	public void mensaje(String ms){

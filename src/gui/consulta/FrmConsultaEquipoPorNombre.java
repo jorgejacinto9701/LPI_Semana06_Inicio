@@ -2,8 +2,6 @@ package gui.consulta;
 
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +14,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-public class FrmConsultaEquipoPorNombre extends JFrame implements KeyListener {
+public class FrmConsultaEquipoPorNombre extends JFrame  {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -62,7 +60,6 @@ public class FrmConsultaEquipoPorNombre extends JFrame implements KeyListener {
 		contentPane.add(lblNombre);
 		
 		txtFiltro = new JTextField();
-		txtFiltro.addKeyListener(this);
 		txtFiltro.setBounds(231, 91, 387, 20);
 		contentPane.add(txtFiltro);
 		txtFiltro.setColumns(10);
@@ -81,16 +78,5 @@ public class FrmConsultaEquipoPorNombre extends JFrame implements KeyListener {
 		));
 		scrollPane.setViewportView(table);
 	}
-	public void keyPressed(KeyEvent arg0) {
-	}
-	public void keyReleased(KeyEvent arg0) {
-		if (arg0.getSource() == txtFiltro) {
-			keyReleasedTxtFiltroJTextField(arg0);
-		}
-	}
-	public void keyTyped(KeyEvent arg0) {
-	}
-	protected void keyReleasedTxtFiltroJTextField(KeyEvent arg0) {
-		
-	}
+	
 }

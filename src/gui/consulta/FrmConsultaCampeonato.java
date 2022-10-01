@@ -14,14 +14,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import entidad.Campeonato;
-import model.CampeonatoModel;
-
-import java.awt.event.KeyListener;
-import java.util.List;
-import java.awt.event.KeyEvent;
-
-public class FrmConsultaCampeonato extends JFrame implements KeyListener  {
+public class FrmConsultaCampeonato extends JFrame  {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -68,7 +61,6 @@ public class FrmConsultaCampeonato extends JFrame implements KeyListener  {
 		contentPane.add(lblNombre);
 		
 		txtFiltro = new JTextField();
-		txtFiltro.addKeyListener(this);
 		txtFiltro.setBounds(158, 93, 391, 20);
 		contentPane.add(txtFiltro);
 		txtFiltro.setColumns(10);
@@ -90,33 +82,7 @@ public class FrmConsultaCampeonato extends JFrame implements KeyListener  {
 		scrollPane.setViewportView(table);
 	}
 
-	
-	public void keyPressed(KeyEvent e) {
-	}
-	public void keyReleased(KeyEvent e) {
-		String filtro = txtFiltro.getText().trim();
-		
-		CampeonatoModel model = new CampeonatoModel();
-		List<Campeonato> lista = model.listaPorNombre(filtro);
-		
-		DefaultTableModel dtm  =(DefaultTableModel) table.getModel();
-		dtm.setRowCount(0);
-		
-		for (Campeonato x : lista) {
-			Object[] fila =  {x.getIdCampeonato(), x.getNombre(), x.getAnnio()};
-			dtm.addRow(fila);
-		}
-		
-		
-	}
-	public void keyTyped(KeyEvent e) {
-		if (e.getSource() == txtFiltro) {
-			keyTypedTxtFiltroJTextField(e);
-		}
-	}
-	protected void keyTypedTxtFiltroJTextField(KeyEvent e) {
-		
-	}
+
 }
 
 
