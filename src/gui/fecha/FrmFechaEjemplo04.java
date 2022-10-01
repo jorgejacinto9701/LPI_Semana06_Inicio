@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -80,5 +81,9 @@ public class FrmFechaEjemplo04 extends JFrame implements ActionListener {
 	protected void actionPerformedBtnFiltrarJButton(ActionEvent e) {
 		
 		
+	}
+	
+	public void mensaje(String ms){
+		JOptionPane.showMessageDialog(this, ms);
 	}
 }
