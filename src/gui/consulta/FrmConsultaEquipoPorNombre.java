@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -79,4 +80,7 @@ public class FrmConsultaEquipoPorNombre extends JFrame  {
 		scrollPane.setViewportView(table);
 	}
 	
+	public void mensaje(String ms){
+		JOptionPane.showMessageDialog(this, ms);
+	}
 }
