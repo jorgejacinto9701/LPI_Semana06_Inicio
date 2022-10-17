@@ -1,4 +1,4 @@
-package gui.simple;
+package gui.registro.simple;
 
 import java.awt.EventQueue;
 import java.awt.Font;

@@ -1,4 +1,4 @@
-package gui.consulta;
+package gui.consulta.simple;
 
 import java.awt.EventQueue;
 import java.awt.Font;

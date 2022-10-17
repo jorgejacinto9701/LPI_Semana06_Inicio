@@ -1,4 +1,4 @@
-package gui.simple;
+package gui.registro.simple;
 
 import java.awt.Color;
 import java.awt.Font;
